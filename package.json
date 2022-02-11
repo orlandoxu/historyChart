@@ -1,0 +1,19 @@
+{
+  "name": "historychart",
+  "version": "1.0.0",
+  "description": "My love people in history.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orlandoxu/historyChart.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/orlandoxu/historyChart/issues"
+  },
+  "homepage": "https://github.com/orlandoxu/historyChart#readme"
+}
