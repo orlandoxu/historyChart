@@ -1,0 +1,23 @@
+{
+  "id": "3178558",
+  "name": "historyPeople",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "3257974",
+      "name": "勋章",
+      "font_class": "xunzhang",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "17171407",
+      "name": "勋章",
+      "font_class": "xunzhang1",
+      "unicode": "e679",
+      "unicode_decimal": 59001
+    }
+  ]
+}

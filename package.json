@@ -4,7 +4,9 @@
   "description": "My love people in history.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "html": "browser-sync start --server --port 80 --files \"page/*, font/*\"",
+    "dev": "webpack-dev-server --config webpack.config.js --mode development"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,19 @@
   "bugs": {
     "url": "https://github.com/orlandoxu/historyChart/issues"
   },
-  "homepage": "https://github.com/orlandoxu/historyChart#readme"
+  "homepage": "https://github.com/orlandoxu/historyChart#readme",
+  "dependencies": {
+    "@babel/plugin-syntax-jsx": "^7.16.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.2",
+    "@babel/plugin-transform-react-jsx": "^7.16.7",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  }
 }
