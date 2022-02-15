@@ -27,6 +27,23 @@ NodeList.prototype.remove = function() {
 
 NodeList.prototype.isNodeList = function () {
   return true
+};
+
+['mousedown', 'mouseup', 'mousemove', 'mouseleave'].forEach(d => {
+  NodeList.prototype['on' + d] = function (func) {
+    this.node.forEach(node1 => {
+      node1['on' + d] = func
+    })
+  }
+})
+
+
+NodeList.prototype.css = function (prop, value) {
+  this.node.forEach(d => {
+    if (['left', 'right', 'bottom', 'top'].includes(prop) && typeof value === 'number') value = value + 'px'
+    d.style[prop] = value
+  })
+  return this
 }
 
 NodeList.prototype.children = function () {
@@ -38,7 +55,7 @@ NodeList.prototype.children = function () {
   }, []))
 }
 
-window.$ = () => {
+window.$ = function () {
   // 将所有native的selector结果，包装成NodeList
   const params = [...arguments].reduce((p, n) => {
     if (typeof n === 'object') {
@@ -59,7 +76,7 @@ window.$ = () => {
   }
 
   if (typeof params[0] === 'string') {
-    return $(params.reduce((p, n) => {
+    return new NodeList(params.reduce((p, n) => {
       p.push(...document.querySelectorAll(n))
       return p
     }, []))
