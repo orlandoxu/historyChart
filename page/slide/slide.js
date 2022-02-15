@@ -6,7 +6,7 @@ import { Slider, createSliderDom } from './SliderLib'
 $(() => {
   document.getElementById('sliderDom').appendChild(createSliderDom())
 
-  const slider = new Slider({start: 2000, end: 2020, posStart: 2003, posEnd: 2017})
+  const slider = new Slider({start: 2000, end: 2020, posStart: 2000, posEnd: 2020})
   slider.reset()
 
 })
