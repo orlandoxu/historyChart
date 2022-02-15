@@ -1,13 +1,13 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 module.exports = {
   entry: {
     // vendor: ['katex', 'mermaid'],
     // 定义了入口点叫做main
     // 这样打包出来就叫做main.js入口
     main: ['./js/index.js'],
+    slide: ['./page/slide/slide.js'],
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -17,7 +17,13 @@ module.exports = {
     hot: false
   },
   plugins: [new HtmlWebpackPlugin({
+    inject: false,
+    chunks: ['main'],
     template: 'index.html'
+  }), new HtmlWebpackPlugin({
+    filename: 'slide.html',
+    chunks: ['slide'],
+    template: 'page/slide/slide.html'
   })],
   module: {
     rules: [{
